@@ -19,8 +19,10 @@ Stringer Electrical Ltd/
 │   │   ├── hero-video.mp4      ← hero background (compressed from Hero-Vid.mp4)
 │   │   ├── hero-poster.jpg     ← shown while the video loads
 │   │   └── hero-van-shed.jpg   ← About section photo
-│   └── projects/               ← project slideshow photos (01–09)
+│   ├── partner/openflow-wordmark.png  ← footer "Digitally powered by" credit
+│   └── projects/               ← project slideshow photos (01–09, graded for web)
 └── source-files/
+    ├── openflow-wordmark.png   ← full-size OpenFlow wordmark
     └── original-photos/        ← untouched originals, kept for future use
 ```
 

@@ -114,7 +114,7 @@ body::after{
 
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
 section{position:relative}
-.section{padding:clamp(96px,14vw,180px) 0}
+.section{padding:clamp(64px,8vw,112px) 0}
 
 /* typography */
 .eyebrow{
@@ -130,7 +130,7 @@ section{position:relative}
 .lead{font-size:clamp(17px,1.35vw,21px);color:var(--muted);max-width:720px;margin:0 auto;line-height:1.65}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .warm{background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent}
-.section-head{display:flex;flex-direction:column;align-items:center;gap:22px;margin-bottom:clamp(48px,7vw,96px)}
+.section-head{display:flex;flex-direction:column;align-items:center;gap:22px;margin-bottom:clamp(40px,5vw,72px)}
 
 /* buttons */
 .btn{
@@ -253,10 +253,9 @@ html:not(.loading) .preloader{opacity:0;visibility:hidden;transition:opacity .8s
 .statement .sw{transition:none}
 .anim .statement .sw{opacity:.14}
 .statement .hl,.statement .hlw{color:#fff;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.14em;text-decoration-color:rgba(255,255,255,.35)}
-.about-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:clamp(64px,9vw,128px)}
+.about-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:clamp(48px,6vw,88px)}
 .about-photo{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3.2;box-shadow:0 40px 120px -40px rgba(0,0,0,.9),0 0 0 1px var(--line)}
-.about-photo img{width:100%;height:118%;object-fit:cover;object-position:50% 70%;will-change:transform;filter:grayscale(1) contrast(1.08);transition:filter 1.2s var(--ease)}
-.about-photo:hover img{filter:grayscale(0) contrast(1)}
+.about-photo img{width:100%;height:118%;object-fit:cover;object-position:50% 70%;will-change:transform}
 .about-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,5,5,.75))}
 .about-photo figcaption{position:absolute;left:0;right:0;bottom:22px;z-index:2;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e0e0e0;font-weight:600}
 .about-copy{display:flex;flex-direction:column;align-items:center;gap:24px}
@@ -296,7 +295,7 @@ html:not(.loading) .preloader{opacity:0;visibility:hidden;transition:opacity .8s
 .card.featured{border-color:rgba(255,255,255,.28);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.015) 60%)}
 .card.featured .card-icon{color:var(--amber);background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.04));border-color:rgba(255,255,255,.3);box-shadow:0 18px 50px -18px rgba(255,255,255,.5)}
 .card.featured::before{background:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,255,255,.14),transparent 60%)}
-.no-job{margin-top:clamp(48px,6vw,80px);display:flex;flex-direction:column;align-items:center;gap:26px}
+.no-job{margin-top:clamp(40px,5vw,64px);display:flex;flex-direction:column;align-items:center;gap:26px}
 .no-job p{font-family:var(--display);font-size:clamp(26px,3.4vw,48px);font-weight:500;letter-spacing:-.03em;line-height:1.1}
 
 /* =========================================================
@@ -460,12 +459,10 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
 .f-social svg{width:18px;height:18px}
 .f-reg{font-size:13px!important;color:var(--dim)!important;line-height:1.7}
 .footer-bottom{display:flex;flex-direction:column;align-items:center;gap:18px;padding-top:32px;font-size:14px;color:var(--dim)}
-.built{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:10px;color:var(--dim)}
-.of-logo{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 10px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#fff;font-weight:600;letter-spacing:-.01em;transition:border-color .3s,background .3s,box-shadow .4s}
-.of-logo:hover{border-color:rgba(99,179,255,.5);background:rgba(99,179,255,.08);box-shadow:0 0 30px -6px rgba(99,179,255,.5)}
-.of-logo svg{width:22px;height:22px}
-.of-logo .of-word{background:linear-gradient(90deg,#fff,#a5c8ff);-webkit-background-clip:text;background-clip:text;color:transparent;font-family:var(--display);font-size:15px}
-.built em{font-style:normal;color:var(--muted)}
+.built{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:12px;color:var(--dim);font-size:14px;letter-spacing:.02em}
+.of-logo{display:inline-flex;align-items:center;opacity:.9;transition:opacity .3s,transform .5s var(--ease),filter .4s}
+.of-logo:hover{opacity:1;transform:translateY(-2px);filter:drop-shadow(0 0 14px rgba(56,189,248,.45))}
+.of-logo img{height:32px;width:auto}
 
 /* back to top */
 .to-top{position:fixed;right:clamp(16px,2.4vw,30px);bottom:clamp(16px,2.4vw,30px);z-index:80;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(14,14,14,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line-2);opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease),background .3s}
@@ -523,6 +520,7 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
   .stage{height:min(72svh,600px)}
   .slide-frame{inset:70px 16px 76px}
   .callbar{display:flex}
+  .about-photo figcaption{font-size:10.5px;letter-spacing:.14em;bottom:14px;padding:0 12px}
   .to-top{bottom:86px}
   .footer{padding-bottom:110px}
   .scroll-cue{display:none}
@@ -615,7 +613,7 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
   <canvas id="sparks" aria-hidden="true"></canvas>
 
   <div class="hero-content" id="heroContent">
-    <div class="hero-badge h-in"><span class="dot"></span>Licensed Electrician · Rangiora / Leithfield</div>
+    <div class="hero-badge h-in"><span class="dot"></span>Licensed Electrician</div>
     <h1 class="h-xl" id="heroTitle">Reliable electrical work, <span class="grad">done properly.</span></h1>
     <p class="lead h-in">High-quality electrical work around North Canterbury and wider — from a licensed electrician who’s easy to deal with and takes real pride in every job.</p>
     <div class="hero-ctas h-in">
@@ -941,16 +939,10 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
       <p class="f-reg">Stringer Electrical Limited · NZ Limited Company · Registered February 2026<br>Company No. 9404219 · NZBN 9429053433091</p>
       <p>© 2026 Stringer Electrical Ltd. All rights reserved.</p>
       <div class="built">
-        <span>Built by</span>
+        <span>Digitally powered by</span>
         <a class="of-logo" href="https://openflow.fun" target="_blank" rel="noopener" aria-label="OpenFlow">
-          <svg viewBox="0 0 32 32" aria-hidden="true">
-            <defs><linearGradient id="of-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7dd3fc"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
-            <circle cx="16" cy="16" r="15" fill="none" stroke="url(#of-g)" stroke-width="2"/>
-            <path d="M8 18.5c3-6 6.5-6 8-2.5s5 3.5 8-2.5" fill="none" stroke="url(#of-g)" stroke-width="2.6" stroke-linecap="round"/>
-          </svg>
-          <span class="of-word">OpenFlow</span>
+          <img src="assets/partner/openflow-wordmark.png" alt="OpenFlow" width="520" height="138" loading="lazy">
         </a>
-        <em>· Trusted Digital Partner</em>
       </div>
     </div>
   </div>
@@ -1206,21 +1198,27 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
 
   /* ---------- Nav state, progress, back-to-top, call bar ---------- */
   const nav = $('#nav'), progress = $('.progress'), toTop = $('#toTop'), ring = $('.to-top .ring circle'), callbar = $('#callbar');
-  let lastY = 0;
+  let lastY = 0, travelDown = 0, travelUp = 0;
   function onScroll(y) {
     const max = document.documentElement.scrollHeight - innerHeight;
     const p = max > 0 ? y / max : 0;
     progress.style.transform = `scaleX(${p})`;
     ring.style.strokeDashoffset = 170 - 170 * p;
     nav.classList.toggle('scrolled', y > 40);
+    // hide after a deliberate scroll down, reveal as soon as the user scrolls up
+    const delta = y - lastY;
+    if (delta > 1) { travelDown += delta; travelUp = 0; }
+    else if (delta < -1) { travelUp -= delta; travelDown = 0; }
     const menuOpen = document.body.classList.contains('menu-open');
-    nav.classList.toggle('hide', !menuOpen && y > 600 && y > lastY + 4);
-    if (y < lastY - 4) nav.classList.remove('hide');
-    toTop.classList.toggle('show', y > innerHeight * 1.2);
+    if (menuOpen || y < 120 || travelUp > 8) nav.classList.remove('hide');
+    else if (travelDown > 40 && y > innerHeight * .6) nav.classList.add('hide');
+    // on phones, step aside at the very bottom so it doesn't cover the footer credit
+    toTop.classList.toggle('show', y > innerHeight * 1.2 && !(innerWidth < 700 && y > max - 160));
     callbar.classList.toggle('show', y > innerHeight * .8 && y < max - 400);
-    lastY = y;
+    if (Math.abs(delta) > 1) lastY = y;   // slow scrolls still add up across frames
   }
-  window.addEventListener('scroll', () => onScroll(window.scrollY), { passive: true });
+  // Lenis reports its own scroll position when smooth scrolling is active
+  window.addEventListener('scroll', () => { if (!window.__lenis) onScroll(window.scrollY); }, { passive: true });
   onScroll(window.scrollY);
   toTop.addEventListener('click', () => window.__lenis ? window.__lenis.scrollTo(0, { duration: 1.6 }) : window.scrollTo({ top: 0, behavior: 'smooth' }));
 
