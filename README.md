@@ -1,6 +1,6 @@
 # Stringer Electrical Ltd — Website
 
-A single-page site for Stringer Electrical Ltd (owner: Zayne Stringer). Built by OpenFlow.
+A single-page site for Stringer Electrical Ltd (director: Zayne Stringer). Built by OpenFlow.
 
 ## Folder layout
 

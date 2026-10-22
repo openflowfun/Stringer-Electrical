@@ -25,7 +25,7 @@
   "@type": "Electrician",
   "name": "Stringer Electrical Ltd",
   "legalName": "Stringer Electrical Limited",
-  "founder": { "@type": "Person", "name": "Zayne Stringer" },
+  "founder": { "@type": "Person", "name": "Zayne Stringer", "jobTitle": "Director" },
   "telephone": "+64274562758",
   "email": "info@stringerelectrical.co.nz",
   "image": "assets/hero/hero-van-shed.jpg",
@@ -210,9 +210,9 @@ html:not(.loading) .preloader{opacity:0;visibility:hidden;transition:opacity .8s
 #sparks{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
 .hero-content{position:relative;display:flex;flex-direction:column;align-items:center;padding:110px var(--gutter) 80px;max-width:1240px;will-change:transform,opacity}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 18px 9px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:13.5px;font-weight:500;color:#e5e5e5}
-.hero-badge .dot{position:relative;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16)}
-.hero-badge .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-.hero-badge .dot::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--cyan);animation:ping 2.2s var(--ease) infinite}
+.hero-badge .dot{position:relative;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(34,197,94,.16)}
+.hero-badge .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e,0 0 2px #bbf7d0}
+.hero-badge .dot::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #22c55e;animation:ping 2.2s var(--ease) infinite}
 @keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
 .hero h1{margin:30px 0 26px;text-shadow:0 10px 60px rgba(0,0,0,.45)}
 .hero h1 .sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
@@ -256,8 +256,6 @@ html:not(.loading) .preloader{opacity:0;visibility:hidden;transition:opacity .8s
 .about-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:clamp(48px,6vw,88px)}
 .about-photo{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3.2;box-shadow:0 40px 120px -40px rgba(0,0,0,.9),0 0 0 1px var(--line)}
 .about-photo img{width:100%;height:118%;object-fit:cover;object-position:50% 70%;will-change:transform}
-.about-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,5,5,.75))}
-.about-photo figcaption{position:absolute;left:0;right:0;bottom:22px;z-index:2;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e0e0e0;font-weight:600}
 .about-copy{display:flex;flex-direction:column;align-items:center;gap:24px}
 .about-copy p{color:var(--muted);font-size:clamp(16px,1.2vw,19px);max-width:560px}
 .signature{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:6px}
@@ -444,8 +442,14 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
    FOOTER
    ========================================================= */
 .footer{position:relative;padding:clamp(80px,10vw,130px) 0 34px;border-top:1px solid var(--line);background:linear-gradient(180deg,var(--bg),#000);overflow:hidden}
-.footer-word{font-family:var(--display);font-weight:700;letter-spacing:-.05em;line-height:.8;font-size:clamp(70px,19vw,320px);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.26);background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 85%);-webkit-background-clip:text;background-clip:text;user-select:none;pointer-events:none;white-space:nowrap;margin-bottom:clamp(50px,7vw,90px)}
-.footer-word span{display:inline-block}
+.footer-word{position:relative;width:min(100% - 2 * var(--gutter),1400px);margin:0 auto clamp(50px,7vw,90px);aspect-ratio:1000/190;user-select:none;pointer-events:none}
+.footer-word svg,.footer-word canvas{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.footer-word text{font-family:var(--display);font-weight:700;font-size:200px;fill:none;stroke-linejoin:round}
+.fw-base{stroke:rgba(255,255,255,.2);stroke-width:1.2;fill:url(#fw-fill)!important}
+/* bright current running around every letter, on a seamless loop */
+.fw-run{stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:70 330;animation:fwRun 7s linear infinite;filter:drop-shadow(0 0 3px #fff) drop-shadow(0 0 10px rgba(205,220,255,.9))}
+.fw-run-b{stroke-width:1.4;stroke-dasharray:24 176;animation-duration:4.5s;animation-direction:reverse;opacity:.65}
+@keyframes fwRun{to{stroke-dashoffset:-400}}
 .footer-top{display:grid;grid-template-columns:1fr;gap:44px;align-items:start;padding-bottom:56px;border-bottom:1px solid var(--line)}
 .f-col{display:flex;flex-direction:column;align-items:center;gap:14px}
 .f-col h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);font-weight:600;margin-bottom:4px}
@@ -520,7 +524,7 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
   .stage{height:min(72svh,600px)}
   .slide-frame{inset:70px 16px 76px}
   .callbar{display:flex}
-  .about-photo figcaption{font-size:10.5px;letter-spacing:.14em;bottom:14px;padding:0 12px}
+  .fw-run{stroke-width:3;filter:drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 4px rgba(205,220,255,.6))}
   .to-top{bottom:86px}
   .footer{padding-bottom:110px}
   .scroll-cue{display:none}
@@ -665,13 +669,12 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
     <div class="about-grid">
       <figure class="about-photo" data-reveal="clip">
         <img src="assets/hero/hero-van-shed.jpg" alt="The Stringer Electrical Ltd van parked on the grass in front of a large dark shed under a clear blue North Canterbury sky" loading="lazy" width="1800" height="1800" id="aboutImg">
-        <figcaption>On the road around North Canterbury</figcaption>
       </figure>
 
       <div class="about-copy">
         <h3 class="h-md" data-reveal>Reliable, high-quality work —<br><span class="grad">from someone easy to deal with.</span></h3>
         <p data-reveal>Based in the Rangiora / Leithfield area, I look after homes and projects right across North Canterbury and wider. Whether it’s wiring a brand-new build or sorting out a single faulty fitting, you get the same care, clear communication and pride in the finished job.</p>
-        <div class="signature" data-reveal><b>Zayne Stringer</b><span>Owner · Licensed Electrician</span></div>
+        <div class="signature" data-reveal><b>Zayne Stringer</b><span>Director · Licensed Electrician</span></div>
       </div>
     </div>
     <div class="values" data-stagger>
@@ -909,7 +912,14 @@ a.c-item:hover{border-color:var(--line-2);background:rgba(255,255,255,.06)}
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="footer-word" aria-hidden="true" id="footerWord"><span>S</span><span>T</span><span>R</span><span>I</span><span>N</span><span>G</span><span>E</span><span>R</span></div>
+  <div class="footer-word" aria-hidden="true" id="footerWord">
+    <svg viewBox="0 0 1000 190"><defs><linearGradient id="fw-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+      <text class="fw-base" x="500" y="168" text-anchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">STRINGER</text>
+      <text class="fw-run" x="500" y="168" text-anchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">STRINGER</text>
+      <text class="fw-run fw-run-b" x="500" y="168" text-anchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">STRINGER</text>
+    </svg>
+    <canvas id="fwArcs"></canvas>
+  </div>
   <div class="wrap">
     <div class="footer-top">
       <div class="f-col f-brand">
@@ -1238,13 +1248,54 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
     c.style.setProperty('--my', `${e.clientY - r.top}px`);
   }));
 
+  /* ---------- Lightning helpers (hero + footer) ---------- */
+  const rand = (a, b) => a + Math.random() * (b - a);
+  // Jagged line between two points (midpoint displacement) that can fork into thinner branches.
+  function trace(x1, y1, x2, y2, rough, level, out) {
+    let pts = [[x1, y1], [x2, y2]];
+    let disp = Math.hypot(x2 - x1, y2 - y1) * rough;
+    for (let g = 0; g < 6; g++) {
+      const next = [pts[0]];
+      for (let i = 0; i < pts.length - 1; i++) {
+        const [ax, ay] = pts[i], [bx, by] = pts[i + 1];
+        const dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy) || 1;
+        const off = rand(-disp, disp);
+        const mx = (ax + bx) / 2 - dy / len * off, my = (ay + by) / 2 + dx / len * off;
+        next.push([mx, my], pts[i + 1]);
+        if (level > 0 && g > 0 && g < 4 && Math.random() < .09) {
+          const ang = Math.atan2(dy, dx) + rand(-1, 1);
+          const bl = len * rand(1.2, 2.6);
+          trace(mx, my, mx + Math.cos(ang) * bl, my + Math.sin(ang) * bl, rough * 1.1, level - 1, out);
+        }
+      }
+      pts = next;
+      disp /= 2;
+    }
+    out.push({ pts, level });
+    return out;
+  }
+
+  // Draw a traced bolt with a soft glow; level marks the trunk, forks render thinner.
+  function drawBolt(ctx, segs, level, alpha, scale = 1) {
+    for (const s of segs) {
+      const t = (s.level >= level ? 1 : .35 + .2 * s.level) * scale;
+      for (const [wd, col] of [[14, `rgba(200,215,255,${alpha * .05})`], [5, `rgba(225,232,255,${alpha * .16})`], [1.5, `rgba(255,255,255,${alpha})`]]) {
+        ctx.lineWidth = wd * t;
+        ctx.strokeStyle = col;
+        ctx.beginPath();
+        ctx.moveTo(s.pts[0][0], s.pts[0][1]);
+        for (let i = 1; i < s.pts.length; i++) ctx.lineTo(s.pts[i][0], s.pts[i][1]);
+        ctx.stroke();
+      }
+    }
+  }
+
   /* ---------- Hero electric arcs (canvas) ---------- */
   (() => {
     const cv = $('#sparks');
     if (!cv || !motionOK) return;
     const ctx = cv.getContext('2d');
     const hero = $('.hero');
-    const rand = (a, b) => a + Math.random() * (b - a);
     let w, h, dpr, running = true, last = performance.now();
     let bolts = [], sparks = [], flash = 0, nextArc = 500, nextStrike = 1600;
 
@@ -1253,31 +1304,6 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
       w = cv.clientWidth; h = cv.clientHeight;
       cv.width = w * dpr; cv.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    // Jagged line between two points (midpoint displacement) that can fork into thinner branches.
-    function trace(x1, y1, x2, y2, rough, level, out) {
-      let pts = [[x1, y1], [x2, y2]];
-      let disp = Math.hypot(x2 - x1, y2 - y1) * rough;
-      for (let g = 0; g < 6; g++) {
-        const next = [pts[0]];
-        for (let i = 0; i < pts.length - 1; i++) {
-          const [ax, ay] = pts[i], [bx, by] = pts[i + 1];
-          const dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy) || 1;
-          const off = rand(-disp, disp);
-          const mx = (ax + bx) / 2 - dy / len * off, my = (ay + by) / 2 + dx / len * off;
-          next.push([mx, my], pts[i + 1]);
-          if (level > 0 && g > 0 && g < 4 && Math.random() < .09) {
-            const ang = Math.atan2(dy, dx) + rand(-1, 1);
-            const bl = len * rand(1.2, 2.6);
-            trace(mx, my, mx + Math.cos(ang) * bl, my + Math.sin(ang) * bl, rough * 1.1, level - 1, out);
-          }
-        }
-        pts = next;
-        disp /= 2;
-      }
-      out.push({ pts, level });
-      return out;
     }
 
     function burst(x, y, n, power) {
@@ -1302,15 +1328,6 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
     function strike(tx, ty) {
       const x2 = tx ?? rand(w * .08, w * .92), y2 = ty ?? rand(h * .55, h * .95);
       arc(x2 + rand(-w * .18, w * .18), -20, x2, y2, { rough: .17, life: .38, level: 3, sparks: 34, power: 420, flash: .09 });
-    }
-
-    function stroke(pts, width, color) {
-      ctx.lineWidth = width;
-      ctx.strokeStyle = color;
-      ctx.beginPath();
-      ctx.moveTo(pts[0][0], pts[0][1]);
-      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
-      ctx.stroke();
     }
 
     function frame(now) {
@@ -1338,12 +1355,7 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
         if (Math.random() < .35) b.segs = trace(b.x1, b.y1, b.x2, b.y2, b.rough, b.level, []);   // crackle
         let a = 1 - b.age / b.life;
         if (Math.random() < .25) a *= .3;                                                        // flicker
-        for (const s of b.segs) {
-          const t = s.level >= b.level ? 1 : .35 + .2 * s.level;
-          stroke(s.pts, 14 * t, `rgba(200,215,255,${a * .05})`);
-          stroke(s.pts, 5 * t, `rgba(225,232,255,${a * .16})`);
-          stroke(s.pts, 1.5 * t, `rgba(255,255,255,${a})`);
-        }
+        drawBolt(ctx, b.segs, b.level, a);
       }
 
       sparks = sparks.filter(p => (p.age += dt) < p.life);
@@ -1381,6 +1393,80 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
       if (running && !was) { last = performance.now(); requestAnimationFrame(frame); }
     }).observe(hero);
     requestAnimationFrame(frame);
+  })();
+
+  /* ---------- Footer wordmark: lightning jumping the gaps between letters ---------- */
+  (() => {
+    const wrap = $('#footerWord'), cv = $('#fwArcs');
+    if (!wrap || !cv || !motionOK) return;
+    const ctx = cv.getContext('2d');
+    const text = $('.fw-base', wrap);
+    let w, h, boxes = [], bolts = [], sparks = [], running = false, last = 0, next = 400;
+
+    function measure() {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const k = w / 1000;   // viewBox is 1000 units wide and keeps its aspect ratio
+      boxes = [];
+      for (let i = 0; i < text.getNumberOfChars(); i++) {
+        const r = text.getExtentOfChar(i);
+        boxes.push({ x: r.x * k, y: r.y * k, w: r.width * k, h: r.height * k });
+      }
+    }
+
+    function jump() {
+      const i = Math.floor(rand(0, boxes.length - 1)), a = boxes[i], b = boxes[i + 1];
+      const k = w / 1000, top = (168 - 125) * k, bot = (168 - 12) * k;   // between cap height and baseline
+      const x1 = a.x + a.w * rand(.72, .9), x2 = b.x + b.w * rand(.1, .28);
+      const y1 = rand(top, bot), y2 = Math.min(bot, Math.max(top, y1 + rand(-h * .2, h * .2)));
+      const level = Math.random() < .3 ? 2 : 1;
+      bolts.push({ x1, y1, x2, y2, level, life: rand(.14, .3), age: 0, segs: trace(x1, y1, x2, y2, .28, level, []) });
+      for (let n = 0; n < 7; n++) {
+        const ang = rand(0, Math.PI * 2), v = rand(40, 160);
+        sparks.push({ x: x2, y: y2, px: x2, py: y2, vx: Math.cos(ang) * v, vy: Math.sin(ang) * v - 60, life: rand(.25, .6), age: 0 });
+      }
+    }
+
+    function frame(now) {
+      if (!running) return;
+      const dt = Math.min(.05, (now - last) / 1000);
+      last = now;
+      if ((next -= dt * 1000) <= 0) { jump(); if (Math.random() < .35) jump(); next = rand(180, 720); }
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.lineJoin = ctx.lineCap = 'round';
+      const scale = Math.max(.55, Math.min(1, w / 1100));
+      bolts = bolts.filter(b => (b.age += dt) < b.life);
+      for (const b of bolts) {
+        if (Math.random() < .4) b.segs = trace(b.x1, b.y1, b.x2, b.y2, .28, b.level, []);
+        let a = 1 - b.age / b.life;
+        if (Math.random() < .3) a *= .3;
+        drawBolt(ctx, b.segs, b.level, a, scale);
+      }
+      sparks = sparks.filter(p => (p.age += dt) < p.life);
+      for (const p of sparks) {
+        p.px = p.x; p.py = p.y;
+        p.vy += 500 * dt;
+        p.x += p.vx * dt; p.y += p.vy * dt;
+        ctx.lineWidth = 1.1;
+        ctx.strokeStyle = `rgba(255,255,255,${1 - p.age / p.life})`;
+        ctx.beginPath(); ctx.moveTo(p.px, p.py); ctx.lineTo(p.x, p.y); ctx.stroke();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+      measure();
+      addEventListener('resize', measure);
+      new IntersectionObserver(([en]) => {
+        const was = running;
+        running = en.isIntersecting;
+        if (running && !was) { last = performance.now(); requestAnimationFrame(frame); }
+      }).observe(wrap);
+    });
   })();
 
   /* ---------- Hide preloader ---------- */
@@ -1513,9 +1599,9 @@ const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Stringer+Electrical+
   });
 
   /* --- Footer wordmark rises letter by letter --- */
-  gsap.fromTo('#footerWord span', { yPercent: 100, opacity: 0 }, {
-    yPercent: 0, opacity: 1, ease: 'none', stagger: .06,
-    scrollTrigger: { trigger: '.footer', start: 'top 95%', end: 'top 35%', scrub: .8 }
+  gsap.fromTo('#footerWord', { opacity: 0, y: 60, scale: .96 }, {
+    opacity: 1, y: 0, scale: 1, duration: 1.6, ease: 'expo.out',
+    scrollTrigger: { trigger: '.footer', start: 'top 90%', once: true }
   });
 
   /* --- Glow orbs drift with scroll --- */
