@@ -36,6 +36,6 @@ Upload `index.html` and the `assets/` folder to any static host (Netlify, Vercel
 
 **Add or swap a project photo:** put the image in `assets/projects/`, then in `index.html` copy one `<figure class="slide">` block in the Projects section. Update the `src`, the `alt`, and the `figcaption` (`data-cat`, `data-title`, plus the description text). The thumbnail, blurred backdrop, caption and counter are all generated automatically.
 
-**Add the other Google reviews:** near the bottom of `index.html`, find `const REVIEWS = [...]` and fill in `name` and `text` for each review. Filled-in reviews appear as quote cards. Susan Hayward's review is already featured above them.
+**Google reviews:** near the bottom of `index.html`, `const REVIEWS = [...]` holds the reviews shown in the slider (3 seconds each). Add a line to add a review, and update `GOOGLE_REVIEW_TOTAL` when the Google count changes. The "+N more" link updates itself.
 
-**Quote form:** right now it opens the visitor's email app with the request filled in, addressed to info@stringerelectrical.co.nz. To receive submissions straight to your inbox instead, create a free form at formspree.io and swap the `mailto` line in the form script for a `fetch()` POST to your Formspree endpoint.
+**Quote form:** every "Get a Quote" button opens the form as a pop-up (it reuses the Contact section form). Right now it opens the visitor's email app with the request filled in, addressed to info@stringerelectrical.co.nz. To receive submissions straight to your inbox instead, create a free form at formspree.io and swap the `mailto` line in the form script for a `fetch()` POST to your Formspree endpoint.
